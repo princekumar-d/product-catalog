@@ -1,17 +1,17 @@
-import React from 'react';
-import styles from './style.module.css';
+import React from "react";
+import styles from "./style.module.css";
 //import QUERY_PRODUCTS from '../queries/queryProductList.graphql';
-import QUERY_PRODUCTS_USERS from '../../queries/queryProductsUser.graphql';
-import { useQuery } from '@apollo/client';
-import { getFormattedPrice } from '../../util/priceUtil';
-import Link from 'next/link';
+import QUERY_PRODUCTS_USERS from "../../queries/queryProductsUser.graphql";
+import { useQuery } from "@apollo/client";
+import { getFormattedPrice } from "../../util/priceUtil";
+import Link from "next/link";
 
 export const ProductListing: React.FC = () => {
-  const id = '5';
+  const id = "5";
   //const { data, loading, error } = useQuery(QUERY_PRODUCTS);
   const { data, loading, error } = useQuery(QUERY_PRODUCTS_USERS, {
     variables: { id },
-    skip: !id
+    skip: !id,
   });
 
   if (!data || loading) {
@@ -29,12 +29,12 @@ export const ProductListing: React.FC = () => {
   };
   const parseAvailableBadges = () => {
     const availableBadgeString = data.user.available_badges;
-    const badgeStrings = availableBadgeString.split('||');
+    const badgeStrings = availableBadgeString.split("||");
     return badgeStrings.map((badgeString) => {
-      const badgeSplitString = badgeString.split(':');
+      const badgeSplitString = badgeString.split(":");
       return {
         name: badgeSplitString[0],
-        badgeTypes: badgeSplitString[1].split(',')
+        badgeTypes: badgeSplitString[1].split(","),
       };
     });
   };
@@ -53,13 +53,13 @@ export const ProductListing: React.FC = () => {
   };
 
   return data && data.productList ? (
-    <div className='container'>
+    <div className="container">
       <main className={styles.main}>
         <h1>Products</h1>
         <p className={styles.resultsSummary}>
           Showing {data.productList.length} items
         </p>
-        <ul className={styles.productGrid} data-testid='productsResults'>
+        <ul className={styles.productGrid} data-testid="productsResults">
           {data.productList.map((product) => {
             const availableOffers = getAvailableOffersForProduct(
               product.offer_ids
@@ -69,12 +69,12 @@ export const ProductListing: React.FC = () => {
               <li
                 className={styles.productCard}
                 key={product.id}
-                data-testid='product'
+                data-testid="product"
               >
                 <Link
                   href={{
-                    pathname: '/ProductDetails/[id]',
-                    query: { id: product.id }
+                    pathname: "/ProductDetails/[id]",
+                    query: { id: product.id },
                   }}
                 >
                   <a>

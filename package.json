@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "eslint pages/**/*.tsx pages/**/*.ts",
-    "lint:fix": "eslint pages/**/*.tsx pages/**/*.ts --fix"
+    "lint": "eslint pages/**/*.tsx",
+    "lint:fix": "eslint pages/**/*.tsx --fix"
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",

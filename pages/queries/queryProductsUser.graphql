@@ -1,0 +1,22 @@
+query ($id: String!) {
+  productList {
+    id
+    image_key
+    name
+    offer_ids
+    price{
+      currency_code
+      current_price
+      original_price
+    }
+  }
+  user(id: $id) {
+    id
+    available_badges
+    offers{
+      id,
+      title,
+      type
+    }
+  }
+}

@@ -1,0 +1,13 @@
+query {
+  productList {
+    id
+    image_key
+    name
+    offer_ids
+    price{
+      currency_code
+      current_price
+      original_price
+    }
+  }
+}

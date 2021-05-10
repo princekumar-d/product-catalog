@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+    web_app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: product_webapp
+        ports:
+            - "3000:3000"
+        depends_on: 
+            - web_api
+    
+    web_api:
+        image: chrismns/tech-test-mock-server:0.1.0
+        container_name: product_api
+        ports:
+            - "3001:3001"

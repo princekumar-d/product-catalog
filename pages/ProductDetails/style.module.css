@@ -1,0 +1,62 @@
+.backButtonWrapper {
+    margin: 16px 0;
+}
+.backButton {
+    display: inline-flex;
+    align-items: center;
+}
+.backButton:hover {
+    text-decoration: underline;
+}
+.backButton span {
+    display: inline-flex;
+}
+
+.productDetails {
+    display: flex;
+}
+.imageContainer {
+    position: relative;
+    margin-right: 56px;
+    flex: 1;
+}
+.imageContainer figure {
+    position: sticky;
+    top: 16px;
+}
+.imageContainer figure img {
+    width: 100%;
+}
+.detailsContainer {
+    flex: 2; 
+}
+.productTitle {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+    font-weight: normal;
+}
+
+.price {
+    display: block;
+    font-size: 2.5rem;
+}
+.price .originalPrice {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 0.75em;
+}
+.price .currentPrice {
+    display: inline-block;
+    font-weight: bold;
+}
+.moreInformation {
+    margin-top: 40px;
+    font-size: 0.875rem;
+}
+.moreInformation .section_title {
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+.moreInformation .infoSection {
+    margin-bottom: 16px;
+}

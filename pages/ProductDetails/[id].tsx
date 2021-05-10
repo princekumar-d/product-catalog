@@ -1,17 +1,17 @@
-import React from "react";
-import { useRouter } from "next/router";
-import QUERY_PRODUCT from "../queries/queryProduct.graphql";
-import { useQuery } from "@apollo/client";
-import styles from "./style.module.css";
-import { getFormattedPrice } from "../../Utils/priceUtil";
-import Link from "next/link";
+import React from 'react';
+import { useRouter } from 'next/router';
+import QUERY_PRODUCT from '../../queries/queryProduct.graphql';
+import { useQuery } from '@apollo/client';
+import styles from './style.module.css';
+import { getFormattedPrice } from '../../util/priceUtil';
+import Link from 'next/link';
 
 const ProductDetails: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
   const { data, loading, error } = useQuery(QUERY_PRODUCT, {
     variables: { id },
-    skip: !id,
+    skip: !id
   });
 
   if (loading) {
@@ -23,22 +23,22 @@ const ProductDetails: React.FC = () => {
   }
   const product = data && data.product;
   return product ? (
-    <div className="container">
+    <div className='container'>
       <main className={styles.main}>
         <div className={styles.backButtonWrapper}>
-          <Link href="/">
+          <Link href='/'>
             <a className={styles.backButton}>
               <span className={styles.backIcon}>
                 <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
                 >
                   <path
-                    d="M16.2426 6.34317L14.8284 4.92896L7.75739 12L14.8285 19.0711L16.2427 17.6569L10.5858 12L16.2426 6.34317Z"
-                    fill="currentColor"
+                    d='M16.2426 6.34317L14.8284 4.92896L7.75739 12L14.8285 19.0711L16.2427 17.6569L10.5858 12L16.2426 6.34317Z'
+                    fill='currentColor'
                   />
                 </svg>
               </span>
@@ -46,7 +46,7 @@ const ProductDetails: React.FC = () => {
             </a>
           </Link>
         </div>
-        <div className={styles.productDetails} data-testid="productDetails">
+        <div className={styles.productDetails} data-testid='productDetails'>
           <div className={styles.imageContainer}>
             <figure>
               <img

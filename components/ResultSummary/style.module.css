@@ -1,0 +1,11 @@
+.resultSummary {
+    margin: 16px 0;
+}
+.resultSummary h1 {
+    font-size: 24px;
+}
+.resultSummary .count {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #999;
+} 

@@ -1,0 +1,11 @@
+.siteHeader {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 16px;
+}
+.siteHeader .logo {
+    display: inline-block;
+    padding: 16px 0;
+}
+.siteHeader .logo svg {
+    height: 56px;
+}

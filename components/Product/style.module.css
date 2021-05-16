@@ -1,17 +1,3 @@
-.backButtonWrapper {
-    margin: 16px 0;
-}
-.backButton {
-    display: inline-flex;
-    align-items: center;
-}
-.backButton:hover {
-    text-decoration: underline;
-}
-.backButton span {
-    display: inline-flex;
-}
-
 .productDetails {
     display: flex;
 }

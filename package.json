@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:prod": "next build && NODE_ENV='production' next start",
     "test": "jest",
-    "lint": "eslint pages/**/*.tsx",
-    "lint:fix": "eslint pages/**/*.tsx --fix"
+    "lint": "eslint ./components/** ./pages/** ./utils/** --ext js,jsx,ts,tsx",
+    "lint:fix": "eslint ./components/** ./pages/** ./utils/** --fix --ext js,jsx,ts,tsx"
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",

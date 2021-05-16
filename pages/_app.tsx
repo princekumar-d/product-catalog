@@ -1,18 +1,12 @@
-import React from "react";
 import "../styles/globals.css";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { ApolloProvider } from "@apollo/client";
+import Layout from "../components/Layout";
+import { AppProps } from "next/app";
 
-const client = new ApolloClient({
-  uri: "http://localhost:3001/graphql",
-  cache: new InMemoryCache(),
-});
-
-const MyApp: React.FC = ({ Component, pageProps }) => {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
-    <ApolloProvider client={client}>
+    <Layout>
       <Component {...pageProps} />
-    </ApolloProvider>
+    </Layout>
   );
 };
 
